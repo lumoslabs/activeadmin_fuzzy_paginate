@@ -9,7 +9,7 @@ module Kaminari
         c = c.except(:includes) unless references_eager_loaded_tables?
         #Ugly, but the DISTINCT clause needs to be overridden manually since
         #count(:distinct => false) doesn't work for queries involving joins
-        c.loaded? ? c.length : ActiveRecord::Base.connection.execute(c.select('COUNT(*)').to_sql).first.first
+        c.loaded? ? c.length : c.connection.execute(c.select('COUNT(*)').to_sql).first.first
       end
     end
   end
