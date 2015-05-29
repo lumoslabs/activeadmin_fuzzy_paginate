@@ -15,6 +15,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = ActiveadminFuzzyPaginate::VERSION
 
-  gem.add_runtime_dependency 'activeadmin', '~> 0.4'
+  gem.add_runtime_dependency 'activeadmin', '>= 0.4'
   gem.add_runtime_dependency 'kaminari'
 end
