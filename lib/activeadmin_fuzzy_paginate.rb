@@ -1,3 +1,4 @@
+require 'activeadmin'
 require 'activeadmin_fuzzy_paginate/active_admin/resource/pagination'
 require 'activeadmin_fuzzy_paginate/active_admin/views/components/paginated_collection'
 require 'activeadmin_fuzzy_paginate/kaminari/helpers/action_view_extension'
