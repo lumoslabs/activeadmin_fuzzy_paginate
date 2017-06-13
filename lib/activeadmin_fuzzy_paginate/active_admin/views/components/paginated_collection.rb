@@ -4,7 +4,7 @@ class ActiveAdmin::Views::PaginatedCollection
     options =  request.query_parameters.except(:commit, :format)
     options[:param_name] = @param_name if @param_name
 
-    options = options.merge(:num_pages => collection.empty? ? collection.current_page : collection.current_page + 1) if active_admin_config.fuzzy_paginate
+    options.merge!(:num_pages => collection.empty? ? collection.current_page : collection.current_page + 1) if active_admin_config.fuzzy_paginate
 
     text_node paginate(collection, options.symbolize_keys)
   end
