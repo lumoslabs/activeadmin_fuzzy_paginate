@@ -16,5 +16,5 @@ Gem::Specification.new do |gem|
   gem.version       = ActiveadminFuzzyPaginate::VERSION
 
   gem.add_runtime_dependency 'activeadmin', '>= 0.4'
-  gem.add_runtime_dependency 'kaminari'
+  gem.add_runtime_dependency 'kaminari', '>= 1.0'
 end

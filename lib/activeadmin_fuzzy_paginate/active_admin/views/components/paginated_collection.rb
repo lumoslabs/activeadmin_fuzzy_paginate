@@ -4,7 +4,7 @@ class ActiveAdmin::Views::PaginatedCollection
     options =  request.query_parameters.except(:commit, :format)
     options[:param_name] = @param_name if @param_name
 
-    options.merge!(:num_pages => collection.empty? ? collection.current_page : collection.current_page + 1) if active_admin_config.fuzzy_paginate
+    options.merge!(:total_pages => collection.empty? ? collection.current_page : collection.current_page + 1) if active_admin_config.fuzzy_paginate
 
     text_node paginate(collection, options.symbolize_keys)
   end
@@ -29,7 +29,7 @@ class ActiveAdmin::Views::PaginatedCollection
     # Display a place holder for fuzzy counts
     if active_admin_config.fuzzy_paginate
       "Displaying results for #{entries_name}"
-    elsif collection.num_pages < 2
+    elsif collection.total_pages < 2
       case collection.size
       when 0; I18n.t('active_admin.pagination.empty', :model => entries_name)
       when 1; I18n.t('active_admin.pagination.one', :model => entry_name)
